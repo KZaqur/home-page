@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auseper - 博客维护中</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="bg"></div>
+
+  <main class="center">
+    <h1 class="name">Auseper</h1>
+    <p class="subtitle">博客维护中 · 敬请期待</p>
+
+    <div class="actions">
+      <button id="qqBtn" class="btn btn-qq" aria-haspopup="dialog">QQ 好友码</button>
+
+      <a class="btn btn-bili" href="https://space.bilibili.com/1741256063" target="_blank" rel="noopener">哔哩哔哩主页</a>
+    </div>
+
+    <p class="hint">（此页面为占位页 — 屏幕适配移动端）</p>
+  </main>
+
+  <!-- QQ Modal -->
+  <div id="qqModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content" role="document">
+      <button class="modal-close" id="qqClose" aria-label="关闭">✕</button>
+      <h2>添加我的 QQ</h2>
+      <div class="qq-code-wrap">
+        <img src="img/social-qq.jpg" alt="QQ 好友码（长按或扫码）" />
+      </div>
+      <p class="modal-tip">长按图片保存或用手机扫码添加</p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

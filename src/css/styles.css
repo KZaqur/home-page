@@ -1,0 +1,130 @@
+/* 基础重置（非常简洁） */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; }
+body {
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 背景图层 */
+.bg {
+  position: fixed;
+  inset: 0;
+  background-image: url('../img/wallpaper.webp');
+  background-size: cover;
+  background-position: center center;
+  filter: saturate(0.95) contrast(0.95);
+  z-index: -1;
+}
+
+/* 中心内容 */
+.center {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6vmin 6vw;
+  backdrop-filter: blur(0px);
+}
+
+.name {
+  font-size: clamp(28px, 6vw, 56px);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4em;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.45);
+}
+
+.subtitle {
+  font-size: clamp(14px, 2.2vw, 20px);
+  margin-bottom: 1.6em;
+  opacity: 0.95;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.6em;
+}
+
+.btn {
+  border: none;
+  padding: 0.6em 1.1em;
+  font-size: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  min-width: 140px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-qq {
+  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+  color: #fff;
+}
+
+.btn-bili {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+.hint { opacity: 0.85; font-size: 12px; }
+
+/* 模态框 */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none; /* 用 aria-hidden 与 JS 控制 */
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  padding: 4vmin;
+  z-index: 60;
+}
+.modal[aria-hidden="false"] { display: flex; }
+.modal-content {
+  background: rgba(255,255,255,0.04);
+  border-radius: 14px;
+  padding: 18px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+.qq-code-wrap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 8px 0 4px 0;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+.modal-tip { font-size: 13px; opacity: 0.9; }
+
+/* 响应式小屏幕优化 */
+@media (max-width: 520px) {
+  .actions { gap: 10px; }
+  .btn { min-width: 120px; padding: 0.55em 0.9em; border-radius: 9px; }
+}
